@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phone Keypad Simulator</title>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        padding: 10px;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+    .button {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 2px solid black; /* Adding the black border back */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 5px;
+        background-color: white;
+        color: black;
+        font-size: 24px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .button:hover {
+        background-color: #007BFF; /* Modern blue color */
+        color: white;
+    }
+    #display {
+        font-size: 24px;
+        margin-bottom: 20px;
+        height: 40px;
+        width: 100%;
+        text-align: center;
+        border: 1px solid black;
+    }
+    #keypad {
+        text-align: center;
+    }
+    #call, #restart {
+        background-color: green;
+        color: white;
+        width: 150px;
+        height: 50px;
+        border-radius: 10px;
+        font-size: 20px;
+        margin-top: 20px;
+    }
+    #restart {
+        display: none;
+    }
+    @keyframes rainbow {
+        0% { background-color: red; }
+        17% { background-color: orange; }
+        34% { background-color: yellow; }
+        51% { background-color: green; }
+        68% { background-color: blue; }
+        85% { background-color: indigo; }
+        100% { background-color: violet; }
+    }
+</style>
+</head>
+<body>
+<div id="display"></div>
+<div id="keypad">
+    <div><span class="button">1</span><span class="button">2</span><span class="button">3</span></div>
+    <div><span class="button">4</span><span class="button">5</span><span class="button">6</span></div>
+    <div><span class="button">7</span><span class="button">8</span><span class="button">9</span></div>
+    <div><span class="button" style="visibility: hidden;">-</span><span class="button">0</span><span class="button" id="backspace">⌫</span></div>
+    <div><button id="call">Call</button></div>
+    <div><button id="restart">Restart</button></div>
+</div>
+
+<script>
+    const display = document.getElementById('display');
+    const buttons = document.querySelectorAll('.button');
+    let phoneNumber = '';
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            if (this.textContent === '⌫') {
+                phoneNumber = phoneNumber.slice(0, -1);
+            } else {
+                phoneNumber += this.textContent;
+            }
+            display.textContent = phoneNumber;
+        });
+    });
+
+    document.getElementById('call').addEventListener('click', function() {
+        if (phoneNumber === '9544640593') {
+            document.body.style.animation = 'rainbow 1s infinite'; // Flashing rainbow effect
+        } else {
+            document.body.style.backgroundColor = 'red';
+        }
+        document.getElementById('restart').style.display = 'block';
+    });
+
+    document.getElementById('restart').addEventListener('click', function() {
+        document.body.style.background = 'none';
+        document.body.style.animation = 'none'; // Remove animation on restart
+        phoneNumber = '';
+        display.textContent = '';
+        this.style.display = 'none';
+    });
+</script>
+</body>
+</html>
