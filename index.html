@@ -33,7 +33,7 @@
         transition: background-color 0.3s, color 0.3s;
     }
     .button:hover {
-        background-color: #007BFF; /* Modern blue color */
+        background-color: #FFB6C1; /* Modern light pink color */
         color: white;
     }
     #display {
@@ -93,7 +93,7 @@
             } else {
                 phoneNumber += this.textContent;
             }
-            display.textContent = phoneNumber;
+            display.textContent = phoneNumber;  // Update the display with the current phone number
         });
     });
 
@@ -110,9 +110,14 @@
         document.body.style.background = 'none';
         document.body.style.animation = 'none'; // Remove animation on restart
         phoneNumber = '';
-        display.textContent = '';
+        display.textContent = '';  // Clear display
         this.style.display = 'none';
     });
 
     // Prevent scrolling on touch devices
-    document.body.addEventListener('
+    document.body.addEventListener('touchmove', function(e) {
+        e.preventDefault();  // Prevent the default scrolling behavior
+    }, { passive: false });
+</script>
+</body>
+</html>
