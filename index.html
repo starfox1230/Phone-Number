@@ -12,27 +12,10 @@
         justify-content: center;
         height: 100vh;
         margin: 0;
-        padding: 0;
+        padding: 10px;
         box-sizing: border-box;
         font-family: Arial, sans-serif;
         overflow: hidden; /* Prevent scrolling */
-        background-color: #f0f0f0; /* Light background for better contrast */
-    }
-    #display {
-        font-size: 24px;
-        margin: 20px auto;
-        padding: 10px;
-        width: 90%; /* Responsive width */
-        max-width: 600px; /* Maximum width to prevent overly wide display on large screens */
-        text-align: center;
-        border: 1px solid black;
-        box-sizing: border-box; /* Padding included in the width */
-    }
-    #keypad {
-        text-align: center;
-        margin: auto;
-        width: 90%; /* Responsive width */
-        max-width: 300px; /* Max width to maintain button proportions */
     }
     .button {
         width: 60px;
@@ -53,13 +36,21 @@
         background-color: #FFB6C1; /* Modern light pink color */
         color: white;
     }
-    #control-panel {
+    #display {
+        font-size: 24px;
+        margin-bottom: 20px;
+        padding: 0 10px; /* Add padding to ensure content does not touch the borders */
+        width: auto; /* Adjust width to be automatic based on content */
+        max-width: 95%; /* Prevent it from extending too wide on larger screens */
+        box-sizing: border-box; /* Include padding in width calculation */
         text-align: center;
-        width: 90%; /* Responsive width */
-        max-width: 300px;
+        border: 1px solid black;
+    }
+    #keypad, #control-panel {
+        text-align: center;
     }
     #call, #restart {
-        background-color: #FFB6C1; /* Pink button */
+        background-color: #FFB6C1; /* Pink button for restart */
         color: white;
         width: 100px;
         height: 50px;
