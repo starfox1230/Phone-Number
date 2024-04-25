@@ -74,10 +74,10 @@
 <body>
 <div id="display"></div>
 <div id="keypad">
-    <div><span class="button">1</span><span class="button">2</span><span the "button">3</span></div>
-    <div><span the "button">4</span><span the "button">5</span><span the "button">6</span></div>
-    <div><span the "button">7</span><span the "button">8</span><span the "button">9</span></div>
-    <div><span the "button" style="visibility: hidden;">-</span><span the "button">0</span><span the "button" id="backspace">⌫</span></div>
+    <div><span class="button">1</span><span class="button">2</span><span class="button">3</span></div>
+    <div><span class="button">4</span><span class="button">5</span><span class="button">6</span></div>
+    <div><span class="button">7</span><span class="button">8</span><span class="button">9</span></div>
+    <div><span class="button" style="visibility: hidden;">-</span><span class="button">0</span><span class="button" id="backspace">⌫</span></div>
     <div><button id="call">Call</button></div>
 </div>
 <button id="restart">Restart</button>
@@ -114,7 +114,6 @@
         display.textContent = '';  // Clear display
         this.style.display = 'none'; // Hide the restart button
     });
-
 
     // Prevent scrolling on touch devices
     document.body.addEventListener('touchmove', function(e) {
