@@ -39,8 +39,10 @@
     #display {
         font-size: 24px;
         margin-bottom: 20px;
-        height: 40px;
-        width: 100%;
+        padding: 0 10px; /* Add padding to ensure content does not touch the borders */
+        width: auto; /* Adjust width to be automatic based on content */
+        max-width: 95%; /* Prevent it from extending too wide on larger screens */
+        box-sizing: border-box; /* Include padding in width calculation */
         text-align: center;
         border: 1px solid black;
     }
