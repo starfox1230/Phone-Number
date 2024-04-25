@@ -15,12 +15,13 @@
         padding: 10px;
         box-sizing: border-box;
         font-family: Arial, sans-serif;
+        overflow: hidden; /* Prevent scrolling */
     }
     .button {
         width: 60px;
         height: 60px;
         border-radius: 50%;
-        border: 2px solid black; /* Adding the black border back */
+        border: 2px solid black;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -112,6 +113,6 @@
         display.textContent = '';
         this.style.display = 'none';
     });
-</script>
-</body>
-</html>
+
+    // Prevent scrolling on touch devices
+    document.body.addEventListener('
