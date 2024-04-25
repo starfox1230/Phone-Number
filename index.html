@@ -44,7 +44,7 @@
         text-align: center;
         border: 1px solid black;
     }
-    #keypad {
+    #keypad, #control-panel {
         text-align: center;
     }
     #call, #restart {
@@ -54,6 +54,9 @@
         height: 50px;
         border-radius: 10px;
         font-size: 20px;
+        margin-top: 20px;
+    }
+    #restart {
         position: fixed;
         top: 50%;
         left: 50%;
@@ -78,7 +81,9 @@
     <div><span class="button">4</span><span class="button">5</span><span class="button">6</span></div>
     <div><span class="button">7</span><span class="button">8</span><span class="button">9</span></div>
     <div><span class="button" style="visibility: hidden;">-</span><span class="button">0</span><span class="button" id="backspace">⌫</span></div>
-    <button id="call" style="display: block;">Call</button> <!-- Ensured the button is displayed -->
+</div>
+<div id="control-panel">
+    <button id="call">Call</button>
 </div>
 <button id="restart">Restart</button>
 
